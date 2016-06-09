@@ -14,7 +14,9 @@ Set-Variable -Name BuildDirectoryName           -Value 'build' 	      -Option Co
 Set-Variable -Name ArtifactsDirectoryName       -Value 'artifacts'    -Option Constant
 Set-Variable -Name NugetPackagesDirectoryName   -Value 'packages'     -Option Constant
 
-New-Item -ItemType Directory -Path $ProductionCodeDirectoryName -Name $NugetPackagesDirectoryName -Force
+
+New-Item -ItemType Directory -Path $rootDirectory -Name $NugetPackagesDirectoryName -Force
+New-Item -ItemType Directory -Path $rootDirectory -Name $DocumentationDirectoryName -Force
 New-Item -ItemType Directory -Path $rootDirectory -Name $ArtifactsDirectoryName -Force
 New-Item -ItemType Directory -Path (Join-Path -Path $rootDirectory -ChildPath $ArtifactsDirectoryName) -Name $ProductionCodeDirectoryName -Force
 New-Item -ItemType Directory -Path (Join-Path -Path $rootDirectory -ChildPath $ArtifactsDirectoryName) -Name $TestCodeDirectoryName -Force
