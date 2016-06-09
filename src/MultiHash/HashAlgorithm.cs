@@ -4,39 +4,12 @@ using System.Security.Cryptography;
 
 namespace MultiHash
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="bytesToHash">The bytes to hash.</param>
+    /// <returns></returns>
     public delegate byte[] HashFunction(byte[] bytesToHash);
-
-    public class HashAlgorithmCode
-    {
-        public static readonly HashAlgorithmCode Sha1 = new HashAlgorithmCode(0x11);
-        public static readonly HashAlgorithmCode Sha2_256 = new HashAlgorithmCode(0x12);
-        public static readonly HashAlgorithmCode Sha2_512 = new HashAlgorithmCode(0x13);
-        public static readonly HashAlgorithmCode Sha3_512 = new HashAlgorithmCode(0x14);
-        public static readonly HashAlgorithmCode Sha3_384 = new HashAlgorithmCode(0x15);
-        public static readonly HashAlgorithmCode Sha3_256 = new HashAlgorithmCode(0x16);
-        public static readonly HashAlgorithmCode Sha3_224 = new HashAlgorithmCode(0x17);
-        public static readonly HashAlgorithmCode Shake_128 = new HashAlgorithmCode(0x18);
-        public static readonly HashAlgorithmCode Shake_256 = new HashAlgorithmCode(0x19);
-        public static readonly HashAlgorithmCode Blake2B = new HashAlgorithmCode(0x40);
-        public static readonly HashAlgorithmCode Blake2S = new HashAlgorithmCode(0x41);
-
-        private HashAlgorithmCode(int code)
-        {
-            Code = code;
-        }
-
-        public int Code { get; }
-
-        public static implicit operator HashAlgorithmCode(int code)
-        {
-            return new HashAlgorithmCode(code);
-        }
-
-        public static implicit operator int(HashAlgorithmCode code)
-        {
-            return code.Code;
-        }
-    }
 
     // 0x11 sha1
     // 0x12 sha2-256
@@ -50,6 +23,9 @@ namespace MultiHash
     // 0x40 blake2b
     // 0x41 blake2s
 
+    /// <summary>
+    /// 
+    /// </summary>
     public sealed class HashAlgorithm
     {
         private static readonly Dictionary<int, Tuple<string, HashFunction>> MapCodeAndAlgorithm = new Dictionary
@@ -89,7 +65,20 @@ namespace MultiHash
             Name = entry.Item1;
         }
 
+        /// <summary>
+        /// Gets the code.
+        /// </summary>
+        /// <value>
+        /// The code.
+        /// </value>
         public HashAlgorithmCode Code { get; private set; }
+
+        /// <summary>
+        /// Gets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         public string Name { get; private set; }
 
         private static HashFunction HashAlgorithmIsNotSupported(string algorithmName)
@@ -101,11 +90,23 @@ namespace MultiHash
             };
         }
 
+        /// <summary>
+        /// Performs an implicit conversion from <see cref="HashAlgorithmCode"/> to <see cref="HashAlgorithm"/>.
+        /// </summary>
+        /// <param name="code">The code.</param>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
         public static implicit operator HashAlgorithm(HashAlgorithmCode code)
         {
             return new HashAlgorithm(code);
         }
 
+        /// <summary>
+        /// Computes the specified bytes.
+        /// </summary>
+        /// <param name="bytes">The bytes.</param>
+        /// <returns></returns>
         public Hash Compute(byte[] bytes)
         {
             return new Hash(_hashFunc(bytes), this);
