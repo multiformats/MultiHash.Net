@@ -185,4 +185,4 @@ Task CreateNuGetPackages {
     } 
 }
 
-Task Default -Depends Clean, RestoreNuGetPackages, Compile, Test, CreateNuGetPackages
+Task Default -Depends RestoreNuGetPackages, Compile, Test, CreateNuGetPackages
