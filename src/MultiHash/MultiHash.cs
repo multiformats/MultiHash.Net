@@ -3,8 +3,16 @@ using System.Linq;
 
 namespace MultiHash
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class MultiHash
     {
+        /// <summary>
+        /// Encodes the hash according to the multihash protocol
+        /// </summary>
+        /// <param name="hash">The hash.</param>
+        /// <returns></returns>
         public static byte[] MultiHashEncode(this Hash hash)
         {
             var codeByteSequence = BitConverter.GetBytes(hash.Algorithm.Code);
@@ -14,6 +22,11 @@ namespace MultiHash
             return multiHashResult;
         }
 
+        /// <summary>
+        /// Decodes the specified multihash encoded digest.
+        /// </summary>
+        /// <param name="multiHashEncodedDigest">The multihash encoded digest.</param>
+        /// <returns></returns>
         public static Hash Decode(byte[] multiHashEncodedDigest)
         {
             var bytes =
