@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+    <metadata>
+        <id>MultiHash.Net</id>
+        <version>$version$</version>
+        <title>MultiHash.Net</title>
+        <authors>Maurice CGP Peters</authors>
+        <owners>Maurice CGP Peters</owners>
+        <licenseUrl>https://github.com/MCGPPeters/MultiHash.Net/blob/master/LICENSE.md</licenseUrl>
+        <projectUrl>https://github.com/MCGPPeters/MultiHash.Net</projectUrl>
+        <requireLicenseAcceptance>true</requireLicenseAcceptance>
+        <description>A .NET implementation of the multihash protocol : https://github.com/jbenet/multihash</description>
+        <releaseNotes />
+        <copyright>Copyright 2016</copyright>
+        <tags>multihash protocol ipfs</tags>
+    </metadata>
+  <files>
+    <file src="..\..\..\artifacts\src\MultiHash\MultiHash.dll" target="lib\net45" />
+    <file src="..\..\..\artifacts\src\MultiHash\MultiHash.pdb" target="lib\net45" />
+    <file src="..\..\..\artifacts\src\MultiHash\MultiHash.xml" target="lib\net45" />
+  </files>
+</package>
