@@ -56,6 +56,22 @@ Function New-NuGetPackage {
     }
 }
 
+Function Publish-NuGetPackage {
+    Param (
+        [Parameter(Mandatory = $true)]
+        [String] $NuGetPath,
+        [Parameter(Mandatory = $true)]
+        [String] $NupkgPath,
+        [Parameter(Mandatory = $true)]
+        [String] $ApiKey,
+        [Parameter(Mandatory = $true)]
+        [String] $Source
+    )
+    Process	{
+        Invoke-Expression -Command "$NuGetPath push $NupkgPath -Source $Source -ApiKey $ApiKey -Verbosity detailed"
+    }
+}
+
 Function Invoke-MSBuild {
     Param (
         [Parameter(Mandatory = $true)]
@@ -185,4 +201,11 @@ Task CreateNuGetPackages {
     } 
 }
 
-Task Default -Depends RestoreNuGetPackages, Compile, Test, CreateNuGetPackages
+Task PushNuGetPackages -Depends CreateNuGetPackages {  
+    $nupkgFiles = Get-ChildItem -Path $DirectoryStructure.ProductionCodeArtifactsDirectoryInfo -Recurse -Include "*.nupkg"
+    $nupkgFiles | ForEach-Object -Process {    
+        Publish-NuGetPackage -NupkgPath $_.FullName -NuGetPath $BuildTools.NuGet -ApiKey "5230ce19-537f-4939-b6fa-5b530d4eade5" -Source "https://www.nuget.org/api/v2/package"
+    } 
+}
+
+Task Default -Depends RestoreNuGetPackages, Compile, Test, CreateNuGetPackages, PushNuGetPackages  
