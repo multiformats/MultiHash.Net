@@ -44,16 +44,49 @@ namespace MultiHash
             {0x41, new Tuple<string, HashFunction>("blake2s", HashAlgorithmIsNotSupported("blake2s"))}
         };
 
+        /// <summary>
+        /// The sha1
+        /// </summary>
         public static readonly HashAlgorithm Sha1 = new HashAlgorithm(HashAlgorithmCode.Sha1);
+        /// <summary>
+        /// The sha2_256
+        /// </summary>
         public static readonly HashAlgorithm Sha2_256 = new HashAlgorithm(HashAlgorithmCode.Sha2_256);
+        /// <summary>
+        /// The sha2_512
+        /// </summary>
         public static readonly HashAlgorithm Sha2_512 = new HashAlgorithm(HashAlgorithmCode.Sha2_512);
+        /// <summary>
+        /// The sha3_512
+        /// </summary>
         public static readonly HashAlgorithm Sha3_512 = new HashAlgorithm(HashAlgorithmCode.Sha3_512);
+        /// <summary>
+        /// The sha3_384
+        /// </summary>
         public static readonly HashAlgorithm Sha3_384 = new HashAlgorithm(HashAlgorithmCode.Sha3_384);
+        /// <summary>
+        /// The sha3_256
+        /// </summary>
         public static readonly HashAlgorithm Sha3_256 = new HashAlgorithm(HashAlgorithmCode.Sha3_256);
+        /// <summary>
+        /// The sha3_224
+        /// </summary>
         public static readonly HashAlgorithm Sha3_224 = new HashAlgorithm(HashAlgorithmCode.Sha3_224);
+        /// <summary>
+        /// The shake_128
+        /// </summary>
         public static readonly HashAlgorithm Shake_128 = new HashAlgorithm(HashAlgorithmCode.Shake_128);
+        /// <summary>
+        /// The shake_256
+        /// </summary>
         public static readonly HashAlgorithm Shake_256 = new HashAlgorithm(HashAlgorithmCode.Shake_256);
+        /// <summary>
+        /// The blake2 b
+        /// </summary>
         public static readonly HashAlgorithm Blake2B = new HashAlgorithm(HashAlgorithmCode.Blake2B);
+        /// <summary>
+        /// The blake2 s
+        /// </summary>
         public static readonly HashAlgorithm Blake2S = new HashAlgorithm(HashAlgorithmCode.Blake2S);
         private readonly HashFunction _hashFunc;
 
