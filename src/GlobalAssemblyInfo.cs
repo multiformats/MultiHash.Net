@@ -8,8 +8,8 @@
     [assembly: AssemblyCompany("Maurice CGP Peters")]
     [assembly: AssemblyCopyright("Copyright Â© 2016")]
     [assembly: AssemblyTrademark("")]
-    [assembly: AssemblyVersion("0.1.0.0")]
-    [assembly: AssemblyFileVersion("0.1.0")]
-    [assembly: AssemblyInformationalVersion("0.1.0-NuGetPackaging.1+11.Branch.NuGetPackaging.Sha.595848cf696bcf4f3905794bcc9b68dae0d33d1c")]
-    [assembly: AssemblyMetadata("gitCommitHash", "595848cf696bcf4f3905794bcc9b68dae0d33d1c")]
+    [assembly: AssemblyVersion("1.0.0.0")]
+    [assembly: AssemblyFileVersion("1.0.0")]
+    [assembly: AssemblyInformationalVersion("1.0.0+Branch.master.Sha.90fcc7f1873a2de4c7c7f29189a6a1c9c1a3240c")]
+    [assembly: AssemblyMetadata("gitCommitHash", "90fcc7f1873a2de4c7c7f29189a6a1c9c1a3240c")]
     
