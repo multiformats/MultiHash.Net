@@ -8,6 +8,10 @@
 # Ignore the packages folder
 **/packages/*
 
+# Ignore build artifacts
+
+**/artifacts/*
+
 # User-specific files
 *.suo
 *.user
