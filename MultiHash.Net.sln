@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiHash.Tests", "tests\MultiHash.Tests\MultiHash.Tests.csproj", "{F28C4EE1-23C6-4F98-BB71-3B722A6F6A35}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiHash.Tests", ".\tests\MultiHash.Tests\MultiHash.Tests.csproj", "{F28C4EE1-23C6-4F98-BB71-3B722A6F6A35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiHash", "src\MultiHash\MultiHash.csproj", "{03F52490-EA12-44F2-947E-7CF07B5D536D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiHash", ".\src\MultiHash\MultiHash.csproj", "{03F52490-EA12-44F2-947E-7CF07B5D536D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
